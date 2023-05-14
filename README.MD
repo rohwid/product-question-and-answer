@@ -2,6 +2,8 @@
 
 This part explain about how this **Product QnA** works, how to setup and use this project. The code explanation were wrote sepately in `notebook/Product Question and Answer.ipynb`, it explain all about tools, function, module and etc for this project. All of this project used the code that explained in that file.
 
+This project will take the search result from PDF data and Google search with SerpAPI. The output from the PDF search and also Google search result will be make the OpenAI know more about the current product that release lately (e.g Samsung Galaxy S23 was officialy released in February 2023).
+
 ## Project Setup
 
 Here are some step to setup and runs this project.
@@ -19,7 +21,7 @@ Here are some step to setup and runs this project.
         $ pip install -r requirements.txt
 
 5. Don't forget to fill all the credentials that required in `params/credentials.yml`.
-6. Also don't forget to fill `PRODUCT`, `MUST_EXIST_PRODUCT_WORD`, and `ONE_OR_MORE_PRODUCT_WORD` variables in `params/app.yml` file. It use to determine the agent selection, to know more please take a look in the [Project Overview](https://github.com/rohwid/product-question-and-answer#project-overview) section in point number four.
+6. Also don't forget to fill `PRODUCT`, `MUST_EXIST_PRODUCT_WORD`, and `ONE_OR_MORE_PRODUCT_WORD` variables in `params/app.yml` file. It use to determine **your product name (e.g Samsung Galaxy S23)** and the agent selection, to know more please take a look in the [Project Overview](https://github.com/rohwid/product-question-and-answer#project-overview) section in point number four.
 7. And continue to launch the Product QnA Chatbot.
 
         $ python console.py
@@ -60,6 +62,6 @@ Following the figure above, there are many implementations of the Langchain modu
 ## Project Demo
 
 In this project I would like to implement the Langchain module as many as I can (e.g prompt templates,
-indexes, chains, agents, memory). So, probably right now I only provide the bare minimum of Visualization or User Interface with the Comand line.
+indexes, chains, agents, memory). Probably right now I come up with the bare minimum of visualization or User Interface (UI), that's Command Line :sweat_smile:
 
 https://github.com/rohwid/product-question-and-answer/assets/9447439/3bf16ebb-3e3c-4937-bca0-6c9f75a2cdb0
