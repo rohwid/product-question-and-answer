@@ -25,7 +25,11 @@ f = open('../params/app.yml', 'r')
 config = yaml.load(f, Loader=yaml.SafeLoader)
 f.close()
 
-loader = PyPDFLoader(config['PDF_SOURCE'][0])
+# Change this by the number of PDF list (from 0 - n list)
+# PDF list were described in '../params/app.yml' with 'PDF_SOURCE' variable name 
+pdf_list_number = 0
+
+loader = PyPDFLoader(config['PDF_SOURCE'][pdf_list_number])
 data = loader.load()
 print (f'There are {len(data)} document(s) in your data.')
 

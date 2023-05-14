@@ -28,7 +28,7 @@ class SearchAgent:
         
     def search_result(self):
         must_exists_words = config['MUST_EXIST_PRODUCT_WORD']
-        optional_words = config['ONE_OR_MORE_PRODUCT_WORD']
+        opt_words = config['ONE_OR_MORE_PRODUCT_WORD']
 
         clean_question = re.sub(r'[^\w\s]', '', self._question.lower())
         question_words = clean_question.strip().split()
@@ -45,21 +45,21 @@ class SearchAgent:
                         match_set.add(exist)
                         must_exist += 1
             
-            if word not in match_set and optional_words[0]:
-                for opt in optional_words:
+            if word not in match_set and opt_words[0]:
+                for opt in opt_words:
                     if word == opt.lower():
                         match_set.add(opt)
                         opt_exist += 1
 
-        if len(must_exists_words) == must_exist and optional_words[0] and opt_exist >= 1:
+        if len(must_exists_words) == must_exist and opt_words[0] and opt_exist >= 1:
             result = self.serpapi_search_all()
             return result
 
-        if len(must_exists_words) == must_exist and optional_words[0] and opt_exist == 0:
+        if len(must_exists_words) == must_exist and opt_words[0] and opt_exist == 0:
             result = self.serpapi_search_related()
             return result
 
-        if len(must_exists_words) == must_exist and not optional_words[0]:
+        if len(must_exists_words) == must_exist and not opt_words[0]:
             result = self.serpapi_search_all()
             return result
 

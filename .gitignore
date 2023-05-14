@@ -206,3 +206,5 @@ nccl_*
 [Tt]humbs.db
 *.DS_Store
 
+# Hold cred params
+params/credentials.yml
