@@ -62,3 +62,4 @@ Following the figure above, there are many implementations of the Langchain modu
 In this project I would like to implement the Langchain module as many as I can (e.g prompt templates,
 indexes, chains, agents, memory). So, probably right now I only provide the bare minimum of Visualization or User Interface with the Comand line.
 
+https://github.com/rohwid/product-question-and-answer/assets/9447439/3bf16ebb-3e3c-4937-bca0-6c9f75a2cdb0
