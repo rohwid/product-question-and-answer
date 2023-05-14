@@ -1,0 +1,8 @@
+PRODUCT: Samsung Galaxy s23
+MUST_EXIST_PRODUCT_WORD:
+- s23
+ONE_OR_MORE_PRODUCT_WORD:
+- Samsung
+- Galaxy
+PDF_SOURCE: 
+- ../data/user_manual.pdfz
