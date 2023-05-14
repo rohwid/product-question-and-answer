@@ -2,7 +2,7 @@
 
 This part explain about how this **Product QnA** works, how to setup and use this project. The code explanation were wrote sepately in `notebook/Product Question and Answer.ipynb`, it explain all about tools, function, module and etc for this project. All of this project used the code that explained in that file.
 
-This project will take the search result from PDF data and Google search with SerpAPI. The output from the PDF search and also Google search result will be make the OpenAI know more about the current product that release lately (e.g Samsung Galaxy S23 was officialy released in February 2023).
+This project will take the search result from PDF data and Google search with SerpAPI. **The output from the PDF file and Google search results will make the OpenAI know more about the current product that was released lately** (e.g. Samsung Galaxy S23 was officially released in February 2023). Even though the ChatGPT or GPT-3 was trained using the public web text data up to 2021.
 
 ## Project Setup
 
