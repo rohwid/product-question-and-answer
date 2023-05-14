@@ -90,7 +90,7 @@ class ChatBot:
         memory = ConversationBufferMemory(memory_key="chat_history")
 
         chat_chain = LLMChain(
-            llm=OpenAI(model_name='text-davinci-003', openai_api_key=credential['OPENAI_API_KEY']), 
+            llm=OpenAI(temperature=0, model_name='text-davinci-003', openai_api_key=credential['OPENAI_API_KEY']), 
             prompt=prompt, 
             verbose=False, 
             memory=memory

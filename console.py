@@ -15,7 +15,7 @@ chat_session = True
 print(f'Hello, Nice to meet you! I\'m bot that asigned for you.')
 print(f"I will answer all your question about our product ({config['PRODUCT']}).")
 print(f"If you wanna quit this chat, just type 'Bye!'.")
-print(f'Let\'s begin the chat :)')
+print(f'Let\'s begin the chat :)\n')
 
 while chat_session:
     question = input("You  >>>  ")
