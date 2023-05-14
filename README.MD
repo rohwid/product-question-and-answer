@@ -55,3 +55,9 @@ Following the figure above, there are many implementations of the Langchain modu
 + The result of the third and the fourth process will be summarized by prompting some command to instruct the OpenAI model.
 + The next step are prompting to instruct the OpenAI model to perform as Chatbot and consider the result of the summarization that comes from the information from the product User Manual's, Catalog's and etc also from the Agent that get some product information from the Google.
 + And the last step is the Chatbot will use Chain from Langchain library to relate or connect with the previous chat history and **the human input** that manage by Memory module from Langchain.
+
+## Project Demo
+
+In this project I would like to implement the Langchain module as many as I can (e.g prompt templates,
+indexes, chains, agents, memory). So, probably right now I only provide the bare minimum of Visualization or User Interface with the Comand line.
+
