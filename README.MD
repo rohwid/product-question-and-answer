@@ -10,14 +10,24 @@ Here are some step to setup and runs this project.
 
         $ virtualenv venv -p /usr/bin/python3.9
 
-3. Continue by installing all the packages and each version that already saved in `requirements.txt`.
+3. Activate the python virtual environment.
+
+        $ source venv/bin/activate
+
+4. Continue by installing all the packages and each version that already saved in `requirements.txt`.
 
         $ pip install -r requirements.txt
-        
-4. Don't forget to fill all the credentials that required in `params/credentials.yml`.
-5. And continue to launch the Product QnA Chatbot.
+
+5. Don't forget to fill all the credentials that required in `params/credentials.yml`.
+6. And continue to launch the Product QnA Chatbot.
 
         $ python console.py
+
+7. To access the notebook file `notebook/Product Question and Answer.ipynb`, just activate the notebook like this command.
+
+        $ jupyter-notebook
+
+    Then open the `notebook/Product Question and Answer.ipynb` file.
 
 ## Project Overview
 
