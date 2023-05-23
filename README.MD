@@ -21,7 +21,7 @@ Here are some step to setup and runs this project.
         $ pip install -r requirements.txt
 
 5. Don't forget to fill all the credentials that required in [`params/credentials.yml`](https://github.com/rohwid/product-question-and-answer/blob/master/params/credentials.yml).
-6. Also don't forget to fill `PRODUCT`, `MUST_EXIST_PRODUCT_WORD`, and `ONE_OR_MORE_PRODUCT_WORD` variables in `params/app.yml` file. It use to determine **your product name (e.g Samsung Galaxy S23)** and the agent selection, to know more please take a look in the [Project Overview](https://github.com/rohwid/product-question-and-answer#project-overview) section in point number four.
+6. Also don't forget to fill `PRODUCT`, `MUST_EXIST_PRODUCT_WORD`, and `ONE_OR_MORE_PRODUCT_WORD` variables in [`params/app.yml`](https://github.com/rohwid/product-question-and-answer/blob/master/params/app.yml) file. It use to determine **your product name (e.g Samsung Galaxy S23)** and the agent selection, to know more please take a look in the [Project Overview](https://github.com/rohwid/product-question-and-answer#project-overview) section in point number four.
 7. And continue to launch the Product QnA Chatbot.
 
         $ python console.py
@@ -41,15 +41,15 @@ Following the figure above, there are many implementations of the Langchain modu
 + Firstly is about the PDF loader that loads the PDF file and then chunks it into many documents. Then continue by embedding each document content and upsert to the [Pinecone](https://www.pinecone.io/) database as vectors. The new PDF document can be added by put the PDF file location on a list inside `PDF_SOURCE` variable inside [`params/app.yml`](https://github.com/rohwid/product-question-and-answer/blob/master/params/app.yml) file. Then continue by open [`query/upsert_pdf_vector_data.py`](https://github.com/rohwid/product-question-and-answer/blob/master/query/upsert_pdf_vector_data.py) and change `pdf_list_number` variable with the number of the list where you put PDF file location in [`params/app.yml`](https://github.com/rohwid/product-question-and-answer/blob/master/params/app.yml).
   
     **Other helpful scripts**:
-    + `query/list_and_describe_index.py` can be use to check the list and the description of the Pinecone database index.
-    + And `query/delete_all_vector_data.py` can be use to delete all vector data from the Pinecone database index.
+    + [`query/list_and_describe_index.py`](https://github.com/rohwid/product-question-and-answer/blob/master/query/list_and_describe_index.py) can be use to check the list and the description of the Pinecone database index.
+    + And [`query/delete_all_vector_data.py`](https://github.com/rohwid/product-question-and-answer/blob/master/query/delete_all_vector_data.py) can be use to delete all vector data from the Pinecone database index.
 
 + Secondly is about performing Similarity Seach by Indexing the vector from Pinecone database and get the similar documents.
 + Third is the continuation of the Similarity Search that produces results about some similar documents. Then the QnA chain from Langchain module with OpenAI model will perform QnA by asking some question with **the human input** as the question.
 + Fourth is about agent selection that will select which agent that will perform. The Agent selection is depend on **the human input** or question, are there contains the **product name** that already write inside [`params/app.yml`](https://github.com/rohwid/product-question-and-answer/blob/master/params/app.yml) with `PRODUCT` variable. There are two agent, first agent corespond to do search with Google directly with **the human input** and the second agent corespond to to search with Google but add some keyword about the correlation with the product. The main purpose of this step is to reduce the Chatbot's reply time and [SerpApi](https://serpapi.com/) usage, if compared with the both Agent worked together.
 
     **Agent selection process**:
-    + The selection process are depend to the `MUST_EXIST_PRODUCT_WORD` and the `ONE_OR_MORE_PRODUCT_WORD` variables in `params/app.yml`.
+    + The selection process are depend to the `MUST_EXIST_PRODUCT_WORD` and the `ONE_OR_MORE_PRODUCT_WORD` variables in [`params/app.yml`](https://github.com/rohwid/product-question-and-answer/blob/master/params/app.yml).
     + If the human input not contains word in `MUST_EXIST_PRODUCT_WORD`, then it will call the second agent.
     + If the human input contains word in `MUST_EXIST_PRODUCT_WORD` and not contain any words in `ONE_OR_MORE_PRODUCT_WORD` list, then it will call the second agent.
     + If the human input contains word in `MUST_EXIST_PRODUCT_WORD` and one of the words in `ONE_OR_MORE_PRODUCT_WORD` list, then it will call the first agent.
